@@ -904,34 +904,321 @@ footer h6{
 
 
 
-.containerOrcamento{
+/* .containerOrcamento{
   margin-top: 43px;
   margin-bottom: 43px;
   display: flex;
   font-size: 23px;
-  /* justify-content: center; */
-  
+} */
+
+
+/* ===== CORREÇÃO DO CONTAINER DO ORÇAMENTO ===== */
+
+
+/* ===== ALINHAMENTO PRECISO DO ORÇAMENTO ===== */
+
+.containerOrcamento {
+    width: 100%;
+    max-width: 1660px !important;
+    margin: 43px auto;
+    padding: 25px 0;
+    display: grid;
+    grid-template-columns: 400px minmax(0, 1fr);
+    column-gap: 35px;
+    box-sizing: border-box;
 }
-.container-geral-label{
+
+/* IMAGEM: alinhada ao início do container */
+.containerOrcamento .orcamentoLogo {
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.containerOrcamento .orcamentoLogo img {
+    width: 380px;
+    height: 450px;
+    max-width: 380px;
+    object-fit: contain;
+    object-position: left top;
+    border-radius: 30px;
+}
+
+/* FORMULÁRIO: ocupa todo o espaço restante */
+.containerOrcamento .orcamentoPersonalizado {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* DUAS COLUNAS COM LARGURAS IGUAIS */
+.containerOrcamento .container-geral-label {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100%;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+/* COLUNAS */
+.containerOrcamento .container-label,
+.containerOrcamento .container {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* TODOS OS CAMPOS OCUPAM A LARGURA DA COLUNA */
+.containerOrcamento .campo {
+    display: flex;
+    /* flex-direction: column; */
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.containerOrcamento .campo label {
+    display: flex;
+    /* flex-direction: column; */
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+.containerOrcamento .campo select,
+.containerOrcamento .campo input {
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0;
+    height: 46px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* BOTÃO ALINHADO À LARGURA DO FORMULÁRIO */
+.containerOrcamento #enviarWhatsApp {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 25px;
+}
+
+/* NOTEBOOKS */
+@media (max-width: 1200px) {
+    .containerOrcamento {
+        grid-template-columns: 300px minmax(0, 1fr);
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .containerOrcamento .orcamentoLogo {
+        width: 300px;
+        min-width: 300px;
+    }
+
+    .containerOrcamento .orcamentoLogo img {
+        width: 280px;
+        height: 380px;
+    }
+
+    .containerOrcamento .container-geral-label {
+        gap: 20px;
+    }
+}
+
+/* TABLETS E CELULARES */
+
+/* ===== IMAGEM QUADRADA COM TAMANHO CONTROLADO ===== */
+
+@media (min-width: 992px) {
+
+    .containerOrcamento {
+        display: grid;
+        grid-template-columns: 400px minmax(0, 1fr);
+        column-gap: 35px;
+        align-items: start;
+    }
+
+    .containerOrcamento .orcamentoLogo {
+        width: 400px;
+        height: 400px;
+        min-width: 0;
+        max-width: 400px;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+
+    .containerOrcamento .orcamentoLogo img {
+        display: block;
+        width: 400px !important;
+        height: 400px !important;
+        max-width: 400px !important;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 30px;
+    }
+
+    .containerOrcamento .orcamentoPersonalizado {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .containerOrcamento .container-geral-label {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+}
+
+
+
+
+ /* .containerOrcamento {
+    width: 100%;
+    max-width: 1320px;
+    margin: 43px auto;
+    padding: 0 20px !important;
+
+    display: grid;
+    grid-template-columns: minmax(250px, 0.8fr) minmax(0, 2fr);
+
+    align-items: center;
+    gap: clamp(25px, 4vw, 60px);
+
+    box-sizing: border-box;
+}
+
+.containerOrcamento .container {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.containerOrcamento .campo {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    margin: 0;
+}
+.containerOrcamento .campo label {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+.containerOrcamento .campo select,
+.containerOrcamento .campo input {
+    width: 100% !important;
+    min-width: 0;
+    height: 43px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+    border-radius: 7px;
+
+    padding: 8px 12px;
+
+    background-color: white;
+    color: #222;
+
+    font-size: 13px;
+    outline: none;
+}
+
+.containerOrcamento .campo select:focus,
+.containerOrcamento .campo input:focus {
+    border-color: #007fff;
+    box-shadow: 0 0 0 2px rgba(0, 127, 255, 0.2);
+} */
+/* .container-geral-label{
   display: flex;
 
   gap: 30px;
-}
-.container-label{
+} */
+
+/* .container-geral-label {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+} */
+/* .container-label{
   display: flex;
   flex-direction: column;
-}
-.orcamentoPersonalizado h2{
+} */
+ /* .container-label {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+} */
+/* .orcamentoPersonalizado h2{
   margin-bottom: 23px;
-}
-.orcamentoLogo{
+} */
+/* .orcamentoPersonalizado h2 {
+    width: 100%;
+    margin: 0 0 25px;
+    font-size: clamp(22px, 2vw, 30px);
+} */
+
+/* .orcamentoLogo{
   margin-right: 60px;
-}
-.orcamentoLogo img{
+} */
+ /* .orcamentoLogo {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+/* .orcamentoLogo img{
 
   height: 450px;
   border-radius: 30px;
-}
+} */
+
+/* .orcamentoLogo img {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 20px;
+} */
 .campo {
   display: flex;
   margin-bottom: 13px;
@@ -1388,10 +1675,17 @@ footer h6{
         gap: 30px;
     }
 
-    .orcamentoLogo,
+    /* .orcamentoLogo,
     .orcamentoPersonalizado {
         width: 100%;
-    }
+    } */
+
+    .orcamentoPersonalizado {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
 
     #imagemModelo {
         width: 100%;
